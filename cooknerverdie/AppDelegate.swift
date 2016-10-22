@@ -16,7 +16,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        pushRootView()
+        self.window?.makeKeyAndVisible()
         return true
+    }
+    
+    func pushRootView()
+    {
+        let rootView = LoginView()
+    
+        let nvc: UINavigationController = BaseNavigationController(rootViewController: rootView)
+        self.window?.rootViewController = nvc
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
